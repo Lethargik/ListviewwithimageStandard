@@ -6,10 +6,10 @@
         android:width="7dp"
         android:color="#1A284A" />
     <corners
-        android:radius="20dip"/>
+        android:radius="20dip" />
     <padding
-        android:left="1dip"
-        android:top="1dip"
-        android:right="1dip"
-        android:bottom="1dip" />
+        android:left="0dip"
+        android:top="0dip"
+        android:right="0dip"
+        android:bottom="0dip" />
 </shape>
