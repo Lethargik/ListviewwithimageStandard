@@ -31,7 +31,18 @@
         android:text="Small Text"
         android:id="@+id/textView2"
         android:layout_alignBottom="@+id/textView"
-        android:layout_toRightOf="@+id/imageView"
+        android:layout_toRightOf="@+id/imageView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/textView3"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
         android:layout_alignRight="@+id/textView"
-        android:layout_alignEnd="@+id/textView" />
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignBottom="@+id/textView"
+        android:paddingLeft="5dp"/>
 </RelativeLayout>

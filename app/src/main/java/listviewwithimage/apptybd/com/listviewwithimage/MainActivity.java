@@ -1,5 +1,4 @@
 package listviewwithimage.apptybd.com.listviewwithimage;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
@@ -11,10 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
-
 public class MainActivity extends Activity {
     ListView list;
+    String[] lastMeme;
     String[] titleMeme;
     String[] descriptionMeme;
     int[] imageMeme ={R.drawable.meme1,R.drawable.meme2,R.drawable.meme2,R.drawable.meme3,
@@ -28,28 +26,27 @@ public class MainActivity extends Activity {
         Resources res =getResources();
         titleMeme=res.getStringArray(R.array.titlessss);
         descriptionMeme=res.getStringArray(R.array.descriptionssss);
+        lastMeme=res.getStringArray(R.array.lastssss);
 
         list= (ListView) findViewById(R.id.listView);
-        MyAdapter adapter=new MyAdapter(this,titleMeme,imageMeme,descriptionMeme);
+        MyAdapter adapter=new MyAdapter(this,titleMeme,imageMeme,descriptionMeme,lastMeme);
         list.setAdapter(adapter);
-
     }
-
-class MyAdapter extends ArrayAdapter{
+class MyAdapter extends ArrayAdapter<String>{
     Context context;
     int[] images;
     String[] titleArray;
     String[] descriptionArray;
+    String[] lastArray;
 
-    MyAdapter(Context c, String[] titlessss,int immmmgs[],String[] descccc ) {
+    MyAdapter(Context c, String[] titlessss,int immmmgs[],String[] descccc,String[] lasttt ) {
         super(c, R.layout.single_row,R.id.textView,titlessss);
         this.context=c;
         this.images=immmmgs;
         this.titleArray=titlessss;
         this.descriptionArray=descccc;
-
+        this.lastArray=lasttt;
     }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater= (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -58,19 +55,14 @@ class MyAdapter extends ArrayAdapter{
         ImageView myImage= (ImageView) row.findViewById(R.id.imageView);
         TextView myTitle= (TextView) row.findViewById(R.id.textView);
         TextView myDescription= (TextView) row.findViewById(R.id.textView2);
+        TextView mylast= (TextView) row.findViewById(R.id.textView3);
 
         myImage.setImageResource(imageMeme[position]);
         myTitle.setText(titleArray[position]);
         myDescription.setText(descriptionArray[position]);
-
-
+        mylast.setText(lastArray[position]);
 
         return row;
     }
 }
-
-
-
-
-
 }

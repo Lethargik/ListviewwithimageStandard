@@ -27,4 +27,16 @@
         <item>description 9</item>
         <item>meme 10</item>
     </string-array>
+    <string-array name="lastssss">
+        <item>lastssss 1</item>
+        <item>lastssss 2</item>
+        <item>lastssss 3</item>
+        <item>lastssss 4</item>
+        <item>lastssss 5</item>
+        <item>lastssss 6</item>
+        <item>lastssss 7</item>
+        <item>lastssss 8</item>
+        <item>lastssss 9</item>
+        <item>lastssss 10</item>
+    </string-array>
 </resources>
